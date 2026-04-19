@@ -1,7 +1,7 @@
 # Home IT Lab Environment
 
 ## Overview
-This project is a simple IT lab set up using VirtualBox. The goal was to learn and practice basic Linux system administration, networking, and troubleshooting in a virtual environment.
+This project was built using a VirtualBox environment to practice basic Linux system administration, networking, and troubleshooting. The goal was to get familiar with common system tasks used in IT support and junior system administration roles.
 
 ---
 
@@ -9,74 +9,68 @@ This project is a simple IT lab set up using VirtualBox. The goal was to learn a
 - Host OS: Windows
 - Virtualization software: VirtualBox
 - Guest OS: Ubuntu Desktop
-- Network: Default NAT configuration
+- Network mode: NAT (default VirtualBox configuration)
 
 ---
 
 ## System Setup
-Installed Ubuntu and updated system packages:
+Installed Ubuntu in a virtual machine and updated system packages.
+
 sudo apt update
 sudo apt upgrade -y
 
 ---
 
 ## User Management
-Created a new user and gave sudo permissions:
+Created a new user account and granted administrative privileges.
+
 sudo adduser labuser
 sudo usermod -aG sudo labuser
 
 ---
 
 ## SSH Remote Access
-Installed SSH server and enabled it:
+Installed and configured SSH to allow remote access to the system.
+
 sudo apt install openssh-server -y
 sudo systemctl start ssh
 sudo systemctl enable ssh
 
-Connected using:
+Connected locally using:
 ssh labuser@<IP_ADDRESS>
 
 ---
 
 ## Networking Basics
-Checked network configuration:
-ip a
+Checked network configuration and tested connectivity.
 
-Tested connectivity:
+ip a
 ping google.com
 
-Key notes:
-- lo = local loopback
-- enp... = main network interface
+Identified key interfaces:
+- loopback (lo)
+- main network interface (enp...)
 
 ---
 
 ## Troubleshooting Practice
-Simulated SSH failure and fixed it:
+Practiced basic service troubleshooting by stopping and restarting the SSH service to simulate a connection issue.
+
 sudo systemctl stop ssh
 sudo systemctl start ssh
 
-Observed and resolved "connection refused" errors.
-
----
-
-## System Monitoring
-top
-df -h
-free -h
+Observed and resolved a “connection refused” error during testing.
 
 ---
 
 ## What I Learned
-- Linux command line basics
-- User and permission management
+- Basic Linux command line usage
+- User account and permission management
 - SSH setup and remote access
-- Networking fundamentals
-- Basic troubleshooting techniques
+- Basic networking concepts (IP addresses, interfaces, connectivity)
+- Simple troubleshooting of system services
 
 ---
 
 ## Notes
-- Done entirely in a VirtualBox virtual machine
-- No cloud or external hardware used
-- Focus was on Linux system administration basics
+All work was completed inside a VirtualBox virtual machine. No external services or hardware were used.
